@@ -14,7 +14,8 @@ Task 1a - Voting Age
 Do the following:   
    1. Create a variable called votingAge and assign it a value
    2. Console log true if age is 18 or higher
-
+      let votingAge = 45;
+      console.log (votingAge > 18)
    HINT: no function required
 */
 
@@ -29,7 +30,16 @@ Do the following:
    3. Console log the new value of the 1st variable
 
    HINT: no function required
-*/
+
+   let num1 = 5
+  let num2 = 50
+
+    if (num2 > 40){
+    num1 = 30;
+    } 
+
+  console.log (num1); 
+  */
 
 
 
@@ -42,6 +52,10 @@ Do the following:
    1. Declare a string type variable with the value of "1999"
    2. Convert the string value of "1999" to a integer value of 1999
    3. Console log the result
+   let i = '1999';
+
+    i = Number('1999')
+    console.log(i);
 
    HINT: look up the Number method
 */
@@ -58,9 +72,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+    return a * b;
   }
+    console.log(multiply(5,5)); 
 
 
 
@@ -74,10 +89,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+    return age * 7;
 }
-
+console.log(dogYears(2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -107,11 +122,11 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight){
+    return weight * .03;
   }
 
-
+console.log(hungryDog(15));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -134,10 +149,48 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-    /*add your code here*/
+let computer = Math.floor(Math.random() * 3) + 1;
+
+let user = Math.floor(Math.random() * 3) + 1;
+
+function game(user, computer) {
+  let rock = 1;
+  let paper = 2;
+  let scissors = 3;
+  const win = "you win!";
+  const lose = "you lose!";
+  const tie = "it's a tie";
+
+  if (user == rock && computer == paper) {
+    return win;
+  }
+  if (user == paper && computer == rock) {
+    return win;
+  }
+  if (user == scissors && computer == rock) {
+    return win;
+  }
+  if (computer == rock && user == paper) {
+    return lose;
+  }
+  if (computer == paper && user == rock) {
+    return lose;
+  }
+  if (computer == scissors && user == rock) {
+    return lose;
+  }
+  if (computer == rock && user == rock) {
+    return tie;
+  }
+  if (computer == paper && user == paper) {
+    return tie;
+  }
+  if (computer == scissors && user == scissors) {
+    return tie;
+  }
 }
-  
+
+console.log(game());
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -151,11 +204,12 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometers){
+    let kilometers = kilometers
+    return miles;
   }
 
-
+console.log(miles(15))
 
 //Task 5b - Feet to CM
 /*
