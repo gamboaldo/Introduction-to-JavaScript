@@ -10,58 +10,29 @@ returns a value, that value will be logged to the console.  An example of this w
 
 /*
 Task 1a - Voting Age
-
 Do the following:   
    1. Create a variable called votingAge and assign it a value
    2. Console log true if age is 18 or higher
-      let votingAge = 45;
-      console.log (votingAge > 18)
    HINT: no function required
 */
 
-
-
 /*
 Task 1b - Values
-
 Do the following:   
    1. Declare two variables and assign them values
    2. Use a conditional to change the value of the 1st variable based on the value assigned to the 2nd variable
    3. Console log the new value of the 1st variable
-
    HINT: no function required
-
-   let num1 = 5
-  let num2 = 50
-
-    if (num2 > 40){
-    num1 = 30;
-    } 
-
-  console.log (num1); 
-  */
-
-
-
-
+*/
 
 /*
 Task 1c - Convert Strings to Numbers
-
 Do the following:   
    1. Declare a string type variable with the value of "1999"
    2. Convert the string value of "1999" to a integer value of 1999
    3. Console log the result
-   let i = '1999';
-
-    i = Number('1999')
-    console.log(i);
-
    HINT: look up the Number method
 */
-
-
-
 
 /*
 Task 1d - Multiply
@@ -72,12 +43,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(a, b){
-    return a * b;
-  }
-    console.log(multiply(5,5)); 
-
-
+function multiply(a, b) {
+  return a * b;
+}
+console.log(multiply(5, 5));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -89,11 +58,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(age){
-    return age * 7;
+function dogYears(age) {
+  return age * 7;
 }
 console.log(dogYears(2));
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -107,24 +75,22 @@ Use the hungryDog function and feeding requirements below to do the following:
   REMEMBER: This program should handle correctly adult AND puppy ages and weights
   
   Feeding Requirements:
-
   Adult Dogs 1 year and older 
      up to 5 lbs - 5% of their body weight
      6 - 10 lbs - 4% of their body weight 
      11 - 15 lbs - 3% of their body weight 
      > 15lbs - 2% of their body weight 
-
   Puppies less than 1 year
      2 - 4 months 10% of their body weight
      4 - 7 months 5% of their body weight 
      7 - 12 months 4% of their body weight
     
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
-*/  
+*/
 
-function hungryDog(weight){
-    return weight * .03;
-  }
+function hungryDog(weight) {
+  return weight * 0.03;
+}
 
 console.log(hungryDog(15));
 
@@ -134,9 +100,7 @@ console.log(hungryDog(15));
 /*
 Create a global variable that randomly generates the computer's choice
 Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
-
 HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
-
 Use the game function below to do the following:
   1. Receive 2 parameters the user's choice and the computer's choice
   2. Return whether the user won, lost, or tied based on these rules of the game described below - the strings returned need to match the strings below exactly.
@@ -149,54 +113,57 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-let computer = Math.floor(Math.random() * 3) + 1;
+let computerGen = Math.random();
+let computer = "null";
 
-let user = Math.floor(Math.random() * 3) + 1;
-
-function game(user, computer) {
-  let rock = 1;
-  let paper = 2;
-  let scissors = 3;
-  const win = "you win!";
-  const lose = "you lose!";
-  const tie = "it's a tie";
-
-  if (user == rock && computer == paper) {
-    return win;
-  }
-  if (user == paper && computer == rock) {
-    return win;
-  }
-  if (user == scissors && computer == rock) {
-    return win;
-  }
-  if (computer == rock && user == paper) {
-    return lose;
-  }
-  if (computer == paper && user == rock) {
-    return lose;
-  }
-  if (computer == scissors && user == rock) {
-    return lose;
-  }
-  if (computer == rock && user == rock) {
-    return tie;
-  }
-  if (computer == paper && user == paper) {
-    return tie;
-  }
-  if (computer == scissors && user == scissors) {
-    return tie;
-  }
+if (computerGen <= 0.3333) {
+  computer = "Rock";
+}
+if (computerGen > 0.3333 && computerGen < 0.6666) {
+  computer = "paper";
+}
+if (computerGen >= 0.6666) {
+  computer = "scissors";
 }
 
-console.log(game());
-  
+function game(user, computer) {
+  if (user === "rock" && computer === "rock") {
+    return "it's a tie";
+  }
+
+if (user === "rock" && computer === "paper") {
+  return "you lose!";
+}
+if (user === "rock" && computer === "scissors") {
+  return "you win!";
+}
+if (user === "paper" && computer === "rock") {
+  return "you win!";
+}
+if (user === "paper" && computer === "paper") {
+  return "it's a tie";
+}
+if (user === "paper" && computer === "scissors") {
+  return "you lose!";
+}
+if (user === "scissors" && computer === "rock") {
+  return "you lose!";
+}
+if (user === "scissors" && computer === "paper") {
+  return "you win!";
+}
+if (user === "scissors" && computer === "scissors") {
+  return "it's a tie'";
+}
+}
+
+console.log(game("paper", computer));
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
-//Metric Converter 
-//Task 5a - KM to Miles 
+//Metric Converter
+//Task 5a - KM to Miles
 /*
 Using the miles function below do the following:
   1. Receive a number of kilometers
@@ -204,12 +171,10 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(kilometers){
-    let kilometers = kilometers
-    return miles;
-  }
-
-console.log(miles(15))
+function miles(kilometers) {
+  return kilometers * 0.621371;
+}
+console.log(10);
 
 //Task 5b - Feet to CM
 /*
@@ -219,11 +184,10 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
- 
-
+function feet(cm) {
+  return cm / 30.48;
+}
+console.log(20);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -235,10 +199,10 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
-
+function annoyingSong(number) {
+  return `${number} bottles of soda on the wall, ${number--} bottles of soda, take one down pass it around ${number--} bottles of soda on the wall`;
+}
+console.log(annoyingSong(5));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -247,19 +211,31 @@ function annoyingSong(/*add your code here*/){
 Using the grade function below do the following: 
   1. Receive a score out of 100 
   2. Return the corresponding letter grade following this grade scale:
-
    90-100 should return 'you got an A' 
    80-89 should return 'you got a B'
    70-79 should return 'you got a C'
    60-69 should return 'you got a D'
    below should return 'you got an F'
 */
-  
-function grade(/*Your Code here */){
-  /*Your Code here */
+
+function grade(score) {
+  if (score >= 90) {
+    return "you got an A";
   }
-  
-  
+  if (score <= 89 && score >= 80) {
+    return "you got a B";
+  }
+  if (score <= 79 && score >= 70) {
+    return "you got a C";
+  }
+  if (score <= 69 && score >= 60) {
+    return "you got a D";
+  }
+  if (score < 60) {
+    return "you got an F";
+  }
+}
+console.log(grade());
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
@@ -268,32 +244,28 @@ function grade(/*Your Code here */){
 Using the vowelCounter function below do the following:
   1. Receive a string as a parameter
   2. Count and return the number of vowels within that string.  It should handle both capitalized and uncapitalized vowels.
-
   HINT - you may need to study tomorrow's content on arrays 
   HINT - try looking up the .includes() method
 */
 
-
 function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+  /*add your code here*/
 }
-
-
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-function foo(){
-    //console.log('its working');
-    return 'bar';
+function foo() {
+  //console.log('its working');
+  return "bar";
 }
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-export default{
-    foo,
-    multiply,
-    dogYears,
-    hungryDog,
-    game,
-    miles,
-    feet,
-    annoyingSong,
-    grade
-}
+export default {
+  foo,
+  multiply,
+  dogYears,
+  hungryDog,
+  game,
+  miles,
+  feet,
+  annoyingSong,
+  grade,
+};
